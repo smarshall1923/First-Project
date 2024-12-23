@@ -9,14 +9,17 @@ from notion import get_pages
 from openai_api import call_chat_completion
 from ui import push_to_expander, display_table
 from config import OPENAI_API_KEY, NOTION_TOKEN, DATABASE_ID
+from google_sheets import get_google_sheet_data
+
+get_google_sheet_data
 
 
-# Create a simple Streamlit app
+# Create a simple Streamlit application
 placeholder = st.empty()
 placeholder.title("Steve's Vitamin List From Notion")
 placeholder.write("Steve Marshall's List of Vitamins From Notion")
 
-
+push_to_expander("This is a test", "Vitamin A", placeholder)
 # Initialize session state for table data
 if 'table_data' not in st.session_state:
     st.session_state.table_data = []
